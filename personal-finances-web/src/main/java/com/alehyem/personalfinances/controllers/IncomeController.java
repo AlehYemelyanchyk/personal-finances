@@ -3,6 +3,7 @@ package com.alehyem.personalfinances.controllers;
 import com.alehyem.personalfinances.services.IncomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/incomes")
@@ -17,7 +18,10 @@ public class IncomeController {
     }
 
     @RequestMapping({"", "/", "index", "index.html"})
-    public String returnIndexPage() {
+    public String listOfIncomes(Model model) {
+
+        model.addAttribute("incomes", incomeService.findAll());
+
         return "incomes/index";
     }
 }

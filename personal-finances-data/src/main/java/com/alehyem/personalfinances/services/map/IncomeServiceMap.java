@@ -25,7 +25,7 @@ public class IncomeServiceMap extends AbstractMapService<Income, Long> implement
 
     @Override
     public Income save(Income object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override

@@ -23,7 +23,6 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Category category1 = new Category();
-        category1.setId(1L);
         category1.setName("Groceries");
         category1.setExpense(234.5);
         category1.setImportance("high");
@@ -31,7 +30,6 @@ public class DataLoader implements CommandLineRunner {
         categoryService.save(category1);
 
         Category category2 = new Category();
-        category2.setId(2L);
         category2.setName("Eating out");
         category2.setExpense(120.6);
         category2.setImportance("low");
@@ -41,14 +39,16 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("Loaded categories");
 
         Income income1 = new Income();
-        income1.setId(1L);
         income1.setName("Salary");
         income1.setCurrency("USD");
 
+        incomeService.save(income1);
+
         Income income2 = new Income();
-        income2.setId(2L);
         income2.setName("Cash back");
         income2.setCurrency("BYN");
+
+        incomeService.save(income2);
 
         System.out.println("Loaded incomes");
     }

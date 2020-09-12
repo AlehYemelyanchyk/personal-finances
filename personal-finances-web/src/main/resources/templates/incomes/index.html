@@ -5,6 +5,23 @@
     <title>Index Page</title>
 </head>
 <body>
-<h1 th:text="'Index Page'">Index Page</h1>
+<h1 th:text="'List of Incomes'">Index Page</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Currency</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="income : ${incomes}">
+        <td th:text="${income.id}">Id</td>
+        <td th:text="${income.name}">Name</td>
+        <td th:text="${income.currency}">Currency</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

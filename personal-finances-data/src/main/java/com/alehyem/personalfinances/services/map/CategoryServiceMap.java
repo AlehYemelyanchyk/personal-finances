@@ -25,7 +25,7 @@ public class CategoryServiceMap extends AbstractMapService<Category, Long> imple
 
     @Override
     public Category save(Category object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override
