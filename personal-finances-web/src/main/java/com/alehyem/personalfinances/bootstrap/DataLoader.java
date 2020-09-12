@@ -4,8 +4,7 @@ import com.alehyem.personalfinances.model.Category;
 import com.alehyem.personalfinances.model.Income;
 import com.alehyem.personalfinances.services.CategoryService;
 import com.alehyem.personalfinances.services.IncomeService;
-import com.alehyem.personalfinances.services.map.CategoryServiceMap;
-import com.alehyem.personalfinances.services.map.IncomeServiceMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +14,10 @@ public class DataLoader implements CommandLineRunner {
     private final CategoryService categoryService;
     private final IncomeService incomeService;
 
-    public DataLoader() {
-        categoryService = new CategoryServiceMap();
-        incomeService = new IncomeServiceMap();
+    @Autowired
+    public DataLoader(CategoryService categoryService, IncomeService incomeService) {
+        this.categoryService = categoryService;
+        this.incomeService = incomeService;
     }
 
     @Override

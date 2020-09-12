@@ -2,9 +2,11 @@ package com.alehyem.personalfinances.services.map;
 
 import com.alehyem.personalfinances.model.Income;
 import com.alehyem.personalfinances.services.IncomeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class IncomeServiceMap extends AbstractMapService<Income, Long> implements IncomeService {
     @Override
     public Set<Income> findAll() {
