@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+</head>
+<body>
+<h1 th:text="'List of Categories'">Index Page</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Expense</th>
+        <th>Importance</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="category : ${categories}">
+        <td th:text="${category.id}">Id</td>
+        <td th:text="${category.name}">Name</td>
+        <td th:text="${category.expense}">Expense</td>
+        <td th:text="${category.importance}">Importance</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
