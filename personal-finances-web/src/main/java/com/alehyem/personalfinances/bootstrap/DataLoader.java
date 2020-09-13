@@ -1,7 +1,5 @@
 package com.alehyem.personalfinances.bootstrap;
 
-import com.alehyem.personalfinances.model.Category;
-import com.alehyem.personalfinances.model.Income;
 import com.alehyem.personalfinances.services.CategoryService;
 import com.alehyem.personalfinances.services.IncomeService;
 import org.springframework.beans.factory.annotation.Autowired;
