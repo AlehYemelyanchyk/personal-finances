@@ -1,16 +1,18 @@
 package com.alehyem.personalfinances.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "portfolios")
-public class Portfolio implements Serializable {
+public class Portfolio extends BaseEntity implements Serializable {
     private static final long serialVersionUID = -186095461441034514L;
 
-    @ManyToOne
-    @JoinColumn(name = "id")
+//    @ManyToOne
+//    @JoinColumn(name = "id")
     @Column(name = "user")
     private User user;
 

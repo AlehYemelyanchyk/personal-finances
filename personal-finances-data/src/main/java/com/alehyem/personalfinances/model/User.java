@@ -1,6 +1,8 @@
 package com.alehyem.personalfinances.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
@@ -9,8 +11,8 @@ public class User extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = -299089265220451433L;
 
-    @ManyToOne
-    @JoinColumn(name = "id")
+//    @ManyToOne
+//    @JoinColumn(name = "id")
     @Column(name = "role")
     private Role role;
 
@@ -38,7 +40,7 @@ public class User extends BaseEntity implements Serializable {
     @Column(name = "transactionBanned")
     private String transactionBanned;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private Portfolio portfolio;
 
     public Role getRole() {

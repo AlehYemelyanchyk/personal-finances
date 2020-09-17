@@ -3,12 +3,14 @@ package com.alehyem.personalfinances.services.impl;
 import com.alehyem.personalfinances.model.User;
 import com.alehyem.personalfinances.repositories.UserRepository;
 import com.alehyem.personalfinances.services.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+@Slf4j
 @Service
 public class JpaUserService implements UserService {
 
@@ -22,11 +24,6 @@ public class JpaUserService implements UserService {
     public Set<User> findAll() {
         Collection<User> allUsers = userRepository.findAll();
         return new HashSet<>(allUsers);
-    }
-
-    @Override
-    public User findByName(String name) {
-        return null;
     }
 
     @Override

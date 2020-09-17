@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+</head>
+<body>
+<h1 th:text="'List of Users'">Index Page</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Role</th>
+        <th>Login</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Country</th>
+        <th>Banned</th>
+        <th>Transaction banned</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}">Id</td>
+        <td th:text="${user.role}">Role</td>
+        <td th:text="${user.login}">Login</td>
+        <td th:text="${user.email}">Email</td>
+        <td th:text="${user.name}">Name</td>
+        <td th:text="${user.surname}">Surname</td>
+        <td th:text="${user.country}">Country</td>
+        <td th:text="${user.banned}">Banned</td>
+        <td th:text="${user.transactionBanned}">Transaction banned</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

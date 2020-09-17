@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/incomes")
+@RequestMapping("/users")
 @Controller
 public class UserController {
 
@@ -18,8 +18,8 @@ public class UserController {
     @RequestMapping({"", "/", "index", "index.html"})
     public String getUserById(Model model) {
 
-        model.addAttribute("user", userRepository.findById(1L));
+        model.addAttribute("users", userRepository.findAll());
 
-        return "incomes/index";
+        return "users/index";
     }
 }
